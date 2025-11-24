@@ -16,9 +16,9 @@
   width: 420px;
   border-radius: 16px;
   box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.18);
-  animation: fade-in 0.6s ease;
 }
 
+/* Title */
 .title {
   text-align: center;
   margin-bottom: 20px;
@@ -27,18 +27,15 @@
 /* Search Bar */
 .search-bar {
   display: flex;
-  background: white;
-  border-radius: 30px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  gap: 10px;
+  margin-bottom: 15px;
 }
 
 .search-bar input {
   flex: 1;
-  padding: 12px 18px;
-  border: none;
-  outline: none;
-  font-size: 16px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 
 .search-btn {
@@ -46,78 +43,37 @@
   background: #2980b9;
   border: none;
   cursor: pointer;
-  font-size: 18px;
   color: white;
-  transition: 0.3s;
+  border-radius: 8px;
+  font-weight: bold;
 }
 
-.search-btn:hover {
-  background: #1f6291;
-}
-
-/* Loading */
-.loading {
-  text-align: center;
-  margin-top: 15px;
+/* ✔ Cypress looks for this p tag*/
+.loading-text {
   font-size: 18px;
-  color: white;
-}
-
-/* Weather Info Box */
-.weather-box {
-  margin-top: 25px;
   text-align: center;
 }
 
-.city {
-  font-size: 22px;
-  margin-bottom: 10px;
-}
-
-.weather-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.icon {
-  width: 80px;
-}
-
-.condition {
-  margin-top: -5px;
-  font-size: 18px;
-  color: #555;
-}
-
-/* Cards */
+/* Weather Cards */
 .weather-cards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
   margin-top: 20px;
 }
 
-.card {
+/* ✔ Cypress expects this exact class name */
+.weather-card {
   background: #f8f8f8;
   padding: 15px;
+  width: 45%;
+  text-align: center;
   border-radius: 10px;
   border: 1px solid #e5e5e5;
-  transition: 0.3s;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.05);
 }
 
-.card:hover {
-  transform: translateY(-3px);
-  background: #ffffff;
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Animations */
-.fade-in {
-  animation: fade 0.5s ease forwards;
-}
-
-@keyframes fade {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: translateY(0); }
+.weather-card h3 {
+  margin-bottom: 8px;
 }
